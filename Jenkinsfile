@@ -13,6 +13,12 @@ pipeline {
                 sh 'ls'
             }
         }
+        stage("build image"){
+    steps{
+        sh 'docker rm -f notesapplatest || true'
+        sh 'docker build -t notesapplatest .'
+    }
+}
         stage("deploy"){
             steps{
                 sh ''' 
