@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Notes App</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<h1>My Notes</h1>
+
+<% notes.forEach(note => { %>
+<div>
+    <h3><%= note.title %></h3>
+    <p><%= note.content %></p>
+</div>
+<% }) %>
+
+</body>
+</html>

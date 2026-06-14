@@ -1,0 +1,14 @@
+[
+  {
+    "title": "Docker",
+    "content": "Learn Docker fundamentals"
+  },
+  {
+    "title": "Jenkins",
+    "content": "Practice CI/CD pipelines"
+  },
+  {
+    "title": "AWS",
+    "content": "Deploy application on EC2"
+  }
+]
