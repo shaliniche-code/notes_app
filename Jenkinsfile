@@ -51,7 +51,7 @@ pipeline {
                 docker container prune -f
                 docker stop notesappcontainerv1 || true
                 docker rm notesappcontainerv1 || true
-                docker run -d --name notesappcontainerv1 -p 3000:3000 notesapplatest
+                docker run -d --name notesappcontainerv1 -p 3000:3000 shalinidocker12/notes-app:latest
                 '''
             }
         }
