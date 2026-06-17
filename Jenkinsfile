@@ -39,6 +39,12 @@ pipeline {
         }
     }
 }
+         stage("pull latest image"){
+            steps{
+                  sh 'docker pull shalinidocker12/notes-app:latest'
+                }
+}
+
         stage("deploy"){
             steps{
                 sh ''' 
