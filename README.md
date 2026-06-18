@@ -174,9 +174,10 @@ pipeline {
 
 ## Running Container
 
-![Docker Container](screenshots/docker.png)
+![Docker Container](screenshots/docker_running.png)
 
 
-```markdown
+## Application
+
 ![Application](screenshots/application.png)
-```
+
