@@ -176,6 +176,7 @@ pipeline {
 
 ![Docker Container](screenshots/docker.png)
 
-## Application
 
+```markdown
 ![Application](screenshots/application.png)
+```
