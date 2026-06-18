@@ -1,3 +1,7 @@
+# Test Image
+
+![Test](screenshots/application.png)
+
 # Notes App CI/CD Pipeline Project
 
 ## Project Overview
@@ -162,7 +166,9 @@ pipeline {
 
  }
 
+
 ## Github
+
 ![Github](screenshots/github.png)
 
 ## Jenkins Pipeline
@@ -176,7 +182,6 @@ pipeline {
 ## Running Container
 
 ![Docker Container](screenshots/docker_running.png)
-
 
 ## Application
 
