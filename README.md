@@ -88,80 +88,11 @@ Verifies that the application is responding successfully on port 3000.
 
 ---
 
+
+
 ## Jenkins Pipeline
 
-```groovy
-
-pipeline {
-    agent any
-    stages {
-        stage("git clone"){
-            steps{
-                git branch: 'main',
-                credentialsId: 'github-creds',
-                url: 'https://github.com/shaliniche-code/notes_app.git'
-            }
-        }
-        stage("listing the files"){
-            steps{
-                sh 'ls'
-            }
-        }
-        stage("build image"){
-    steps{
-        sh 'docker rm -f notesapplatest || true'
-        sh 'docker build -t notesapplatest .'
-    }
-}
-
-        stage('Push to Docker Hub') {
-    steps {
-        withCredentials([
-            usernamePassword(
-                credentialsId: 'dockerhub-creds',
-                usernameVariable: 'DOCKER_USER',
-                passwordVariable: 'DOCKER_PASS'
-            )
-        ]) {
-            sh '''
-            echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin
-
-            docker tag notesapplatest $DOCKER_USER/notes-app:latest
-
-            docker push $DOCKER_USER/notes-app:latest
-            '''
-        }
-    }
-}
-         stage("pull latest image"){
-            steps{
-                  sh 'docker pull shalinidocker12/notes-app:latest'
-                }
-}
-
-        stage("deploy"){
-            steps{
-                sh '''
-                docker container prune -f
-                docker stop notesappcontainerv1 || true
-                docker rm notesappcontainerv1 || true
-                docker run -d --name notesappcontainerv1 -p 3000:3000 shalinidocker12/notes-app:latest
-                '''
-            }
-        }
-
-        stage('Health Check') {
-    steps {
-        sh '''
-        sleep 5
-        curl http://localhost:3000
-        '''
-    }
-}
-    }
-
- }
-```
+The complete Jenkins pipeline is available in the `Jenkinsfile` located in the root directory of this repository.
 
 ## Github
 
@@ -183,3 +114,37 @@ pipeline {
 
 ![Application](screenshots/application.png)
 
+
+## Challenges Faced
+
+- Container exiting immediately due to missing `notes.json`
+- Docker container name conflicts
+- README image rendering issue
+- Rebuilding image after code changes
+- Understanding Docker layer caching
+
+## Key Learnings
+
+- Writing Dockerfiles for Node.js applications
+- Docker layer caching optimization
+- GitHub Webhook integration
+- Jenkins Pipeline creation
+- Docker Hub authentication using credentials
+- Automated deployment on AWS EC2
+- Health Check implementation using `curl`
+- Container lifecycle management
+
+## Future Enhancements
+
+- Add automated testing stage
+- Add SonarQube code quality checks
+- Deploy using Docker Compose
+- Deploy to Kubernetes
+- Implement Blue-Green deployment
+- Add Slack/Email notifications
+
+## Author
+
+**Shalini**
+
+DevOps Learner | Linux | Docker | Jenkins | AWS
