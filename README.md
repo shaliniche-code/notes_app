@@ -1,7 +1,3 @@
-# Test Image
-
-![Test](screenshots/application.png)
-
 # Notes App CI/CD Pipeline Project
 
 ## Project Overview
@@ -165,7 +161,7 @@ pipeline {
     }
 
  }
-
+```
 
 ## Github
 
