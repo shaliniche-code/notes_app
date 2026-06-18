@@ -163,9 +163,6 @@ pipeline {
  }
 
 
-## GitHub Repository
-
-![GitHub Repository](screenshots/github.png)
 
 ## Jenkins Pipeline
 
